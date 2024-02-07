@@ -2516,7 +2516,7 @@ html.no-csstransitions .intro-content__bottom {
 
 @media screen and (max-width:500px) {
   .intro-content {
-    max-width: 90vw;
+    max-width: 100vw;
   }
 
   .intro-content__bottom {
