@@ -67,7 +67,15 @@
             speed: 3000
         });
     };
-
+/* Block right click 
+* ---------------------------------------------------- */
+    document.addEventListener('contextmenu', event => {
+        event.preventDefault();
+    });
+    
+    document.querySelectorAll('.disabled').forEach(element => {
+        element.style.pointerEvents = 'none';
+    });
 
    /* modal
     * ---------------------------------------------------- */ 
