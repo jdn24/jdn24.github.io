@@ -86,14 +86,14 @@ body {
  * ## links 
  * ------------------------------------------------------------------- */
 a {
-  color: #3cff00;
+  color: #5500b1;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: #33648a;
+  color: #cf00fe;
 }
 
 a:hover,
