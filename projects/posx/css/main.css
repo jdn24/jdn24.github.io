@@ -2820,8 +2820,20 @@ html.no-csstransitions .intro-content__bottom {
  * ## copyright
  * ------------------------------------------------------------------- */
 .ss-copyright {
-  z-index: 2;
-  position: relative;
+
+ 
+  color: rgb(255, 255, 255);
+  z-index: 101;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+ 
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(293%, 950%, 0);
+  position: fixed;
+  
+  top: 50%;
+
 }
 
 .ss-copyright span {
