@@ -14,3 +14,12 @@ RewriteRule . /jdn24.github.io/index.php [L]
 </IfModule>
 
 # END WordPress
+# BEGIN Simply Static
+# The directives (lines) between "BEGIN Simply Static" and "END Simply Static" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<Files "/Applications/MAMP/htdocs/jdn24.github.io/wp-content/uploads/simply-static/6a1fbabc228350541d37acfe248379b7-debug.txt">
+require all denied
+require host localhost
+</Files>
+# END Simply Static
