@@ -39,8 +39,8 @@ body {
 	  display: grid;
 	}
 	#button-container {
-		position:absolute;
-		right: 2%;
+		position:relative;
+		right: -40%;
 	  top: 20%;;
 		
 	  }
