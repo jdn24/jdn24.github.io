@@ -38,6 +38,9 @@ body {
 		font-size: 14px;
 		padding: 10px;
 		display: block; /* Make list items stack vertically */
+		width: 5rem;
+		height: 5rem;
+
 	  }
   
 	#button-container button {
@@ -51,12 +54,14 @@ div{
 }
 
 #button-container {
-	display: flex;
-	justify-content: flex-end;
+	position:absolute;
+	right: 2%;
+  top: 20%;;
 	
   }
   
   #button-container button {
+	margin: 0.25rem;
 	margin-left: 10px;
   padding: 10px 20px;
   border: none;
@@ -78,6 +83,7 @@ div{
 h1 {
 	font-weight: 800;
 	margin: 1rem 0 0;
+	font-size:2.5rem;
 	
 }
 
@@ -95,8 +101,8 @@ ul {
 		flex-flow: column;
 		border-radius: 0.2rem;
 		padding: 1rem;
-		font-weight: 300;
-		font-size: 0.8rem;
+		font-weight: 400;
+		font-size: 1rem;
 		box-sizing: border-box;
 		background: rgba(255, 255, 255, 0.25);
 		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -104,11 +110,13 @@ ul {
 		-webkit-backdrop-filter: blur(4px);
 		border-radius: 10px;
 		border: 1px solid rgba(255, 255, 255, 0.402);
+		color:rgb(255, 255, 255);
 
 		time {
 			font-size: 2rem;
 			margin: 0 0 1rem 0;
 			font-weight: 500;
+			color:white;
 		}
 
 	}
