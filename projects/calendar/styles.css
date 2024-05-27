@@ -40,19 +40,19 @@ div{
 	margin-left: 10px;
   padding: 10px 20px;
   border: none;
-  border-radius: 30px; // Adjust for a more rounded appearance
+  border-radius: 30px;  /* Adjust for a more rounded appearance */
   background-color: white;
   color: blue;
-  transition: all 0.3s ease; // Update to transition all properties
+  transition: all 0.3s ease; /* Update to transition all properties */
   font-size: 1em;
   text-transform: uppercase;
   font-family: "Poppins", serif;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); // Add a box-shadow for a 3D effect
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Add a box-shadow for a 3D effect */
   }
   #button-container button:hover {
     background-color: black;
     color: white;
-    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2); // Increase the box-shadow on hover
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2); /* Increase the box-shadow on hover */
   }
   
 h1 {
