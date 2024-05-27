@@ -17,16 +17,28 @@ body {
 * {
 	box-sizing: border-box; /* Include padding and border in an element's total width and height */
   }
-  
+  @media screen and (min-width: 700px) {
+	ul {
+	  grid-template-columns: repeat(7, minmax(10rem, 1fr));
+	  display: grid;
+	}}
   @media (max-width: 600px) {
 	body {
 	  padding: 0 10px; /* Add some padding to the body to prevent content from touching the edges of the screen */
 	}
   
-	#list1 ul li {
-	  font-size: 14px;
-	  padding: 10px;
-	}
+	ul {
+		list-style-type: none;
+		padding: 0;
+		display: flex;
+
+	  }
+	
+	  li {
+		font-size: 14px;
+		padding: 10px;
+		display: block; /* Make list items stack vertically */
+	  }
   
 	#button-container button {
 	  font-size: 14px;
@@ -70,8 +82,8 @@ h1 {
 }
 
 ul {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	
+	grid-template-columns: repeat(7, 1fr);
 	flex-wrap: wrap;
 	list-style: none;
 
