@@ -14,7 +14,15 @@ body {
 	color:white;
 }
 
-@media (max-width: 600px) {
+* {
+	box-sizing: border-box; /* Include padding and border in an element's total width and height */
+  }
+  
+  @media (max-width: 600px) {
+	body {
+	  padding: 0 10px; /* Add some padding to the body to prevent content from touching the edges of the screen */
+	}
+  
 	#list1 ul li {
 	  font-size: 14px;
 	  padding: 10px;
@@ -23,9 +31,9 @@ body {
 	#button-container button {
 	  font-size: 14px;
 	  padding: 10px;
+	  width: 100%; /* Make the buttons full width to better fit on small screens */
 	}
   }
-
 div{
 	align-items: center;
 }
