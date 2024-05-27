@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <h1 id="title">freeCodeCamp Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the platform</p>
+    <div>
+    <form id="survey-form" method="post" action="https://register-demo.freecodecamp.org">
+    <br>
+  
+    <fieldset>
+   <legend> Personal Details:</legend>
+    <section>
+
+    <label id="name-label" for="name"><i class="fa fa-user-o" aria-hidden="true"></i>
+Name:
+</label>  <br>
+      <input id="name" type="text" placeholder="Enter your Name" required /></section>
+
+    <section>
+<label id="email-label" for="email"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email:</label>  <br>
+      <input id="email" type="email" placeholder="Enter your Email" required />  </section>
+<section>
+<label id="number-label" for="number"><i class="fa fa-sort" aria-hidden="true"></i> Age: <i>(optional)</i></label><br>
+<input id="number" type="number" min="18" max="55" placeholder="Enter your age" /> </section>
+
+</label>
+</fieldset>
+<br>
+<fieldset>
+  <legend>Other Information:</legend>
+<section>
+  <label id="dropdown-label" for="dropdown">Select Emirate:</label>
+    <br>
+<select id="dropdown" required>
+  <option value="none">Select Option</option>
+  <option value="AUH">Abu Dhabi</option>
+  <option value="DXB">Dubai</option>
+  <option value="SHJ">Sharjah</option>
+  <option value="AJM">Ajman</option>
+  <option value="RAK">Ras Al Khaimah</option>
+  <option value="FUJ">Fujairah</option>
+  <option value="UAQ">Umm Al Quain</option>
+  </select> </section>
+
+<section>
+  <label id="radio-label" for="student">Are you a student? <i>(optional)</i>
+    </label><br>
+    <input name="student" id="student" class="radio1" type="radio" value="yes">Yes</input>
+    <input name="student" id="student" class="radio2" type="radio" value="no">No</input>
+    
+    </section>
+    <section>
+     <label>Which of the following Social Media do you use:
+     </label><br>
+     <input id="facebook" class="check" type="checkbox" value="fb">Facebook</input>
+
+      <input id="instagram" class="check" type="checkbox" value="ig">Instagram</input>
+
+      <input id="linkedin" class="check" type="checkbox" value="ln">LinkedIn</input>
+
+      <input id="github" class="check" type="checkbox" value="gb">GitHub&nbsp;&nbsp;&nbsp;&nbsp;</input>
+
+      <input id="reddit" class="check" type="checkbox" value="reddit">Reddit &nbsp;&nbsp;&nbsp;&nbsp;</input>
+
+      <input id="discord" class="check" type="checkbox" value="dsc">Discord</input>
+
+   </section>
+   <section>
+<label>How was your experience with this form?</label>
+<textarea id="textarea" placeholder="Enter your comments"></textarea>
+</section>
+</fieldset>
+<input class="submit" type="submit" id="submit" value="Submit" />
+      </form>
+      </div>
+  </body> 
+</html> 
