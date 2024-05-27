@@ -71,7 +71,9 @@ body {
 	  padding: 0 10px; /* Add some padding to the body to prevent content from touching the edges of the screen */
 	  
 	}
-	
+	#scroll-top {
+font-size: 25px;
+	}
 	h1 {
 		font-weight: 800;
 		margin: 1rem 0 0;
