@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jaden Ade - Coming Soon</title>
+<link rel="icon" type="image/x-icon" href="/images/pencil.ico">
+<!--CSS-->
+<link rel="stylesheet" href="style.scss">
+<link rel="stylesheet" href="css/bootstrap-light.css">
+<link href='https://fonts.googleapis.com/css?family=Oswald:300|Poppins:400,700' rel='stylesheet' type='text/css'>
+<!--/CSS-->
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+  // Get today's date
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, '0');
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = today.getFullYear();
+
+  today = yyyy + '-' + mm + '-' + dd;
+
+  // Get all the <li> elements
+  let listItems = document.getElementsByTagName('li');
+
+  // Loop through the list items
+  for (let i = 0; i < listItems.length; i++) {
+    // Get the datetime attribute of the <time> element inside the current list item
+    let datetime = listItems[i].getElementsByTagName('time')[0].getAttribute('datetime');
+
+    // If the datetime matches today's date, add the "today" class
+    if (datetime === today) {
+      listItems[i].classList.add('today');
+    }
+  }
+});
+	</script>
+</head>
+<body>
+	
+
+<!-- days sourced from: https://nationaldaycalendar.com/february/ -->
+
+
+<h1>February 2022</h1>
+<p>Holidays and Daily Observances in the United States</p>
+<div id="button-container">
+	<button id="prev">Previous</button>
+	<button id="next">Next</button>
+  </div>
+<div id="list1">
+	<h1>May 2024</h1>
+	<ul>
+	<li><time datetime="2024-05-01">1</time>Dark Chocolate Day</li>
+	<li><time datetime="2024-05-02">2</time>Groundhog Day</li>
+	<li><time datetime="2024-05-03">3</time>Carrot Cake Day</li>
+	<li><time datetime="2024-05-04">4</time>Wear Red Day</li>
+	<li><time datetime="2024-05-05">5</time>Weatherperson's Day</li>
+	<li><time datetime="2024-05-06">6</time>Chopsticks Day</li>
+	<li><time datetime="2024-05-07">7</time>Periodic Table Day</li>
+	<li><time datetime="2024-05-08">8</time>Kite Flying Day</li>
+	<li><time datetime="2024-05-09">9</time>Pizza Day</li>
+	<li><time datetime="2024-05-10">10</time>Umbrella Day</li>
+	<li><time datetime="2024-05-11">11</time>Inventor's Day</li>
+	<li><time datetime="2024-05-12">12</time>Global Movie Day</li>
+	<li><time datetime="2024-05-13">13</time>Tortellini Day</li>
+	<li><time datetime="2024-05-14">14</time>Valentine's Day</li>
+	<li><time datetime="2024-05-15">15</time>Gumdrop Day</li>
+	<li><time datetime="2024-05-16">16</time>Do a Grouch a Favor Day</li>
+	<li><time datetime="2024-05-17">17</time>Cabbage Day</li>
+	<li><time datetime="2024-05-18">18</time>Battery Day</li>
+	<li><time datetime="2024-05-19">19</time>Chocolate Mint Day</li>
+	<li><time datetime="2024-05-20">20</time>Love Your Pet Day</li>
+	<li><time datetime="2024-05-21">21</time>President's Day</li>
+	<li><time datetime="2024-05-22">22</time>Cook a Sweet Potato Day</li>
+	<li><time datetime="2024-05-23">23</time>Tile Day</li>
+	<li><time datetime="2024-05-27">24</time>Toast Day</li>
+	<li><time datetime="2024-05-25">25</time>Clam Chowder Day</li>
+	<li><time datetime="2024-05-26">26</time>Pistachio Day</li>
+	<li><time datetime="2024-05-27">27</time>Polar Bear Day</li>
+	<li><time datetime="2024-05-28">28</time>Tooth Fairy Day</li>
+	<li><time datetime="2024-05-29">29</time>Tooth Fairy Day</li>
+	<li><time datetime="2024-05-30">30</time>Tooth Fairy Day</li>
+	<li><time datetime="2024-05-31">31</time>Tooth Fairy Day</li>
+</ul>
+</div>
+</body>
+</html>

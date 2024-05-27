@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
+
+body {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	font-family: "Poppins", serif;
+	background: rgb(35, 87, 241);
+	background: radial-gradient(
+		circle,
+		rgb(28, 160, 243) 0%,
+		rgb(29, 32, 169) 100%
+	);
+	color:white;
+}
+
+@media (max-width: 600px) {
+	#list1 ul li {
+	  font-size: 14px;
+	  padding: 10px;
+	}
+  
+	#button-container button {
+	  font-size: 14px;
+	  padding: 10px;
+	}
+  }
+
+div{
+	align-items: center;
+}
+
+#button-container {
+	display: flex;
+	justify-content: flex-end;
+	
+  }
+  
+  #button-container button {
+	margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px; // Adjust for a more rounded appearance
+  background-color: white;
+  color: blue;
+  transition: all 0.3s ease; // Update to transition all properties
+  font-size: 1em;
+  text-transform: uppercase;
+  font-family: "Poppins", serif;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); // Add a box-shadow for a 3D effect
+  }
+  #button-container button:hover {
+    background-color: black;
+    color: white;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2); // Increase the box-shadow on hover
+  }
+  
+h1 {
+	font-weight: 800;
+	margin: 1rem 0 0;
+	
+}
+
+ul {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	flex-wrap: wrap;
+	list-style: none;
+
+	li {
+		display: flex;
+		width: 10rem;
+		height: 10rem;
+		margin: 0.25rem;
+		flex-flow: column;
+		border-radius: 0.2rem;
+		padding: 1rem;
+		font-weight: 300;
+		font-size: 0.8rem;
+		box-sizing: border-box;
+		background: rgba(255, 255, 255, 0.25);
+		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+		backdrop-filter: blur(4px);
+		-webkit-backdrop-filter: blur(4px);
+		border-radius: 10px;
+		border: 1px solid rgba(255, 255, 255, 0.402);
+
+		time {
+			font-size: 2rem;
+			margin: 0 0 1rem 0;
+			font-weight: 500;
+		}
+
+	}
+
+	li:hover{
+		background-color: rgba(0, 0, 0, 0.409);
+	}
+	.today {
+		time {
+			font-weight: 800;
+		}
+		background: #ffffff70;
+	}
+}
