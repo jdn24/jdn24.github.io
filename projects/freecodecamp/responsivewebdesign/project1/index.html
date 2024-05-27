@@ -10,7 +10,7 @@
     <h1 id="title">freeCodeCamp Survey Form</h1>
     <p id="description">Thank you for taking the time to help us improve the platform</p>
     <div>
-    <form id="survey-form" method="post" action="https://jdn24.github.io/projects/freecodecamp/responsivewebdesign/project1/submit.html" target="_blank">
+    <form id="survey-form" method="post" action="">
     <br>
   
     <fieldset>
@@ -76,8 +76,13 @@ Name:
 <textarea id="textarea" placeholder="Enter your comments"></textarea>
 </section>
 </fieldset>
-<input onclick="window.location.href = 'https://jdn24.github.io/projects/freecodecamp/responsivewebdesign/project1/submit.html';" class="submit" type="submit" id="submit" value="Submit" />
+<input onclick="return clicked();" class="submit" type="submit" id="submit" value="Submit" />
       </form>
       </div>
+      <script>
+        function clicked() {
+    return confirm('This is a dummy form.\nIf it was configured to save responses it would send your responses to a server and display a success message.');
+}
+</script>
   </body> 
 </html> 
