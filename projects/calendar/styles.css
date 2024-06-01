@@ -85,6 +85,10 @@ a {
 
 	  #socials-desk{
 		display: block;
+		position:fixed;
+	left:0;
+	top:0;
+	width:100%;
 	}
 	#socials-mob{
 		display: none;
@@ -198,9 +202,7 @@ footer{
 		-webkit-backdrop-filter: blur(6px);
 }
 #socials-desk{
-	position:absolute;
-	left: 0;
-	top: 0;
+	
 	margin: 1rem;
 }
 
