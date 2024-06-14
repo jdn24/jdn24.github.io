@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>The Weakest Link</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-3 mt-md-5">
+        <h1 class="text-center mt-5 mb-5">The Weakest Link</h1>
+        <div id="players" class="row mt-5 mb-5"></div>
+        <div class="mt-5 mb-5">
+            <h2 class="mb-3">Prize Pool: $<span id="prizePool">0</span></h2>
+            <h2 class="mb-3">Current Round: <span id="currentRound">1</span></h2>
+            <h2 class="mb-3">Current Round Value: $<span id="currentRoundValue">100</span></h2>
+        </div>
+        <div class="d-flex justify-content-around mt-5 mb-5">
+            <button id="addPlayer" class="btn btn-primary mr-2">Add Player</button>
+            <button id="nextRound" class="btn btn-warning mr-2">Next Round</button>
+            <button id="resetGame" class="btn btn-danger">Reset Game</button>
+        </div>
+    </div>
+    <script>
+        let players = [];
+        let prizePool = 0;
+        let round = 1;
+
+        document.getElementById('addPlayer').addEventListener('click', function() {
+            const playerName = prompt('Enter player name');
+            players.push({ name: playerName, score: 0 });
+            updatePlayers();
+        });
+
+        document.getElementById('nextRound').addEventListener('click', function() {
+            round++;
+            document.getElementById('currentRound').innerText = round;
+            document.getElementById('currentRoundValue').innerText = 100 * Math.pow(2, round - 1);
+            players.forEach(player => player.score = 0);
+            updatePlayers();
+        });
+
+        document.getElementById('resetGame').addEventListener('click', function() {
+            players = [];
+            prizePool = 0;
+            round = 1;
+            document.getElementById('currentRound').innerText = round;
+            document.getElementById('currentRoundValue').innerText = 100 * Math.pow(2, round - 1);
+            updatePlayers();
+            document.getElementById('prizePool').innerText = prizePool;
+        });
+
+        function updatePlayers() {
+            const playersDiv = document.getElementById('players');
+            playersDiv.innerHTML = '';
+            players.forEach((player, index) => {
+                const playerDiv = document.createElement('div');
+                playerDiv.innerHTML = `
+                    <h2>${player.name}</h2>
+                    <p>Score: $<span id="score-${index}">${player.score}</span></p>
+                    <button onclick="bank(${index})" class="btn btn-success">Bank</button>
+                    <button onclick="answer(${index})" class="btn btn-primary">Answer</button>
+                    <button onclick="resetScore(${index})" class="btn btn-warning">Reset Score</button>
+                    <button onclick="removePlayer(${index})" class="btn btn-danger">Remove Player</button>              
+                    `;
+                playersDiv.appendChild(playerDiv);
+            });
+        }
+
+        function bank(index) {
+            prizePool += players[index].score;
+            players[index].score = 0;
+            document.getElementById(`score-${index}`).innerText = players[index].score;
+            document.getElementById('prizePool').innerText = prizePool;
+        }
+
+        function answer(index) {
+            players[index].score += 100 * Math.pow(2, round - 1);
+            document.getElementById(`score-${index}`).innerText = players[index].score;
+        }
+
+        function resetScore(index) {
+    players[index].score = 0;
+    document.getElementById(`score-${index}`).innerText = players[index].score;
+}
+        function removePlayer(index) {
+    players.splice(index, 1); // Remove player from array
+    updatePlayers();
+}        
+    </script>
+</body>
+</html>
