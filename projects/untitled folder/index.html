@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Analyzer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #007bff, #0056b3);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            text-align: center;
+        }
+        #inputImage {
+            border: none;
+        }
+        .btn {
+            background-color: #ffffff;
+            color: #007bff;
+            width: 200px;
+            height: 50px;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .btn:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .results {
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .results-displayed {
+    background-color: white;
+    color: #007bff;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <h1 class="text-center">Image Analyzer</h1>
+        <div class="mt-5">
+            <label for="inputImage">Select an image:</label>
+            <input type="file" id="inputImage" class="form-control" accept="image/*">
+            <button type="button" onclick="analyzeImage()" class="btn btn-primary">Analyze</button>
+        </div>
+        <div id="tags" class="results mt-5"></div>
+        <div id="caption" class="results mt-5"></div>
+        <div id="metadata" class="results mt-5"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
