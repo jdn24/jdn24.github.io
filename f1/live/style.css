@@ -144,9 +144,30 @@ div.loading-overlay {
     }
 
     .home-button {
-        padding: 10px 20px; /* Adjusts padding for better touch targets */
-        font-size: 16px; /* Makes the button text larger for readability */
+        padding: 15px 30px; /* Larger tap area */
+        font-size: 18px; /* Larger text */
     }
+    .logo-container, .stream-info, .countdown, .home-button {
+        /* Adjust styles for smaller screens */
+        flex-direction: column;
+        text-align: center;
+    }
+    .countdown {
+        font-size: 14px; /* Smaller font size */
+    }
+    .home-button {
+        padding: 10px; /* Larger tap area */
+    }
+    body {
+        font-size: 16px; /* Larger font size for readability */
+    }
+    p, .offlinetext {
+        margin: 10px 0; /* More vertical spacing */
+    }
+    header {
+        width:100%;
+    }
+    
 }
 
 @keyframes pulse {
@@ -221,14 +242,40 @@ body {
             text-align: center;
         }
         footer {
-            background: #222;
-            color: #aaa;
+            padding: 20px;
+            background-color: #222;
+            color: #fff;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-size: small;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            margin: 10px 0;
+        }
+        
+        .footer-bottom {
+            margin-top: 20px;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+            }
+        
+            .footer-section {
+                margin: 20px 0;
+            }
+            nav {
+                display: none;
+            }
         }
         main {
         margin-top: 60px; /* Adjust this value based on the actual height of your header */
