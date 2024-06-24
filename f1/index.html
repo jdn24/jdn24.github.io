@@ -5,219 +5,84 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>F1 Stream | JDN</title>
-        <style>
-            @font-face {
-    font-family: 'Formula1Bold';
-    src: url('https://jdn24.github.io/f1/fonts/Formula1-Bold.ttf') format('truetype');
-    
-}
-@font-face {
-    font-family: 'Formula1Reg';
-    src: url('https://jdn24.github.io/f1/fonts/Formula1-Regular.ttf') format('truetype');
-}
-            @media (max-width: 700px) {
-                .mobile-hide {
-                    display: none;
-                }
-                .mobile-full-width {
-                    width: 100% !important;
-                }
-                #streamOfflineOverlay {
-            width: 80%; /* Adjust width for smaller screens */
-            padding: 10px; /* Adjust padding for smaller screens */
-            font-size: 14px; /* Adjust font size for smaller screens */
-        }
-            }
-
-            .loading-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.81);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    color: white;
-    font-family: 'Formula1Bold';
-}
-.stream-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center align if desired */
-}
-
-#streamOfflineOverlay {
-    position: absolute; /* or absolute */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(0, 0, 0); /* Reduced transparency */
-    z-index: 9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 40px; /* Larger text */
-}
-
-.countdown {
-    font-size: 20px; /* Adjust size as needed */
-    color: #ff0000; /* Gold color for better contrast */
-    margin-top: 10px; /* Adjust spacing as needed */
-    font-family: 'Formula1Reg', sans-serif;
-}
-.offlinetext{
-    font-size: 30px;
-    font-family: 'Formula1Bold';
-
-}
-.logo {
-    max-width: 120px;
-    animation: pulse 2s infinite;
-}
-
-.offlinelogo {
-    max-width: 200px;
-    
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); opacity: 0.5; }
-    100% { transform: scale(1); opacity: 1; }
-}
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color:white;
-}
-        </style>
+        <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="https://jdn24.github.io/f1/F1.svg" type="image/x-icon">
     </head>
-    <body bgcolor="black" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-        
-        <iframe class="mobile-full-width" src="https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9wb3A1Y2x1c3RlcmEwMGRlMDcxNzIzNzlhNjJkNjE4OS5oeXBwLnR2L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjc5MjcvMzIyMTIyNzkyNy5tcGQ/cnJzaXA9d2ViLmh5cHAudHY6NDQzJnpvbmVvZmZzZXQ9MCZzZXJ2aWNldHlwZT0xJmljcGlkPSZhY2NvdW50dHlwZT0xJmxpbWl0Zmx1eD0tMSZsaW1pdGR1cj0tMSZhY2NvdW50aW5mbz1VMHYyODFsb3ZaTUxXenF0WGpQdFl1T1h3UUNvSVFSazQ0OUolMkJCVUNjYXdnUVk0M1RnNWVMazYlMkJLSGtPQmJrVklxJTJGendENXhZQWU4ZEkzUGx0RVElMkJVcmN5bUhCSWh4NW9KUDRqdjJmUEswJTNEJTNBMjAyMzAyMDYxMDE3NDYlM0FVVEMlMkMxMDAzNjYzOTgzJTJDMTE1LjE2NC4xODcuMjAlMkMyMDIzMDIwNjEwMTc0NiUyQ3VybjpIdWF3ZWk6bGl2ZVRWOlhUVjU1NDU2MzM4JTJDMTAwMzY2Mzk4MyUyQy0xJTJDMCUyQzElMkMlMkMlMkMyJTJDNTkzJTJDJTJDJTJDMiUyQzEzNDMxMTclMkMwJTJDMjQ4NDEyJTJDNDc1NjI5NDMlMkMlMkMlMkMyJTJDMSUyQ0VORCZHdWFyZEVuY1R5cGU9MiZpdD1INHNJQUFBQUFBQUFBRFdPUVlfQ0lCU0VfdzFIQXBTcVBYQnlZMkppcW9sMXItWUJEMnhLaTBJMThkX2JydDI1dlpuNVhtWk1ZSERfbzRvTmM5cFZWc3ZTU0Y0NXJhV29EQ3ZFZEJRbFNwTHhVVWNsaUlFUTJzSFgwYzdZNzNsNzVZd3lLZ1NuWEpCbWZyY0w0SmRtX2V3MUpsWDhZMmRNcjlhZ3N0blJGMlFLM2lmME1MWnhvS2NBNzBzS1M0VmdzMHpqcTNXNXFwaWNKTlprbk4wR2NqY2w1QVo1R19zN0pMU0g2UDhBNVNCa0pIY3dIWGlzb1VjMVBFUDRjc2RrcHpVZndWdm52X1FBQUFBJnRlbmFudElkPTYwMDE=&k1=OGU1Yzg4YzFhZDQxMWNlNGFhMWZjZDNlNjNmYTk0NDg=&k2=ZmI0ZTZkM2MyYTQ0NGMzNzExNDc3NDM4YmNjMGI1ZmM=" allow="autoplay; encrypted-media" height="100%" width="57%" frameborder="0" scrolling="no" allowfullscreen></iframe>
-    
-        <!--<iframe class="mobile-full-width" src="https://latifistreams.com/channel/raw2?url=aHR0cHM6Ly9saXZlMi5ub3RlYnVsay54eXovdWtfc3NmMS9pbmRleC5tM3U4" allow="autoplay; encrypted-media" height="100%" width="57%" frameborder="0" scrolling="no" allowfullscreen></iframe>
-    --> <embed class="mobile-hide" src="https://f1-dash.com/dashboard" width="43%" height="100%">
-        
-            <div class="loading-overlay">
-                <div class="logo-container">
-                    <img class="logo" src="https://jdn24.github.io/f1/F1.png" alt="F1 Logo">
-                    <p>Loading...</p>
-                </div>
+    <body>
+        <header>
+            <div class="logo-container">
+                <img class="logo" src="https://jdn24.github.io/f1/F1.png" alt="F1 Logo" style="width: 100px;">
+                <h1>F1 STREAM</h1> 
+                <p> | &nbsp; A Project by JDN</p>
             </div>
-
-            <div id="streamOfflineOverlay" class="loading-overlay" style="display: none;">
-            
-            </div>
-
-            <script>
-                window.onload = function() {
-                // Show the loading overlay when the page loads
-                document.querySelector('.loading-overlay').style.display = 'flex';
-
-                 // Hide the loading overlay after 3 seconds
-                setTimeout(function() {
-                document.querySelector('.loading-overlay').style.display = 'none';
-                }, 7000);
-                // Detect mobile devices and show a popup
-                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                    alert("If you'd like to view the telemetry, Please view this website on a desktop.");
-                }
-                                        };
-            </script>
-
-                <script>
+            <nav>
+                <a href="https://jdn24.github.io/f1">HOME</a>
+                <a href="https://jdn24.github.io/f1/live">LIVE</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+        </header>
+        
+        
+        <main>
+            <section class="hero f1reg">
+                <h2>Watch Formula 1 Live</h2>
+                <p>Watch Formula 1 live streams for free. No sign-up or subscription required. Enjoy the 
+                    thrill of Formula 1 racing from anywhere in the world.</p>
+                    <br>
+                    <br>
+            <h1 style="color:yellow;">PLEASE DO NOTE THAT THIS SITE IS STILL UNDER DEVELOPMENT. <br>HOWEVER, YOU MAY VISIT THE LIVE TAB TO WATCH THE RACE.</h1>
+        </section>
+        </main>
+        
+        <footer>
+            <p>Made with ♥ by JDN. <br>
+                
+                This project/website is unofficial and is not associated in any way with the Formula 1 companies. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of Formula One Licensing B.V</p>
+        </footer>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
-        const onlinePeriods = [
-            //Austria
-            { start: '2024-06-28T14:00:00', end: '2024-06-28T16:00:00' }, //Practice 1
-            { start: '2024-06-28T18:00:00', end: '2024-06-28T19:45:00' }, //Sprint Quali
-            { start: '2024-06-29T13:30:00', end: '2024-06-29T15:30:00' }, //Sprint
-            { start: '2024-06-29T17:30:00', end: '2024-06-29T19:30:00' }, //Quali
-            { start: '2024-06-30T16:30:00', end: '2024-06-30T19:30:00' }, //Race
+    const races = [
+        { name: "Race 1", date: "2023-05-01" },
+        { name: "Race 2", date: "2023-05-15" },
+        // Add more races here
+    ];
 
-        ];
+    const carouselSlides = document.querySelector('.carousel-slides');
 
-        const now = new Date();
+    races.forEach(race => {
+        const raceDiv = document.createElement('div');
+        raceDiv.innerHTML = `<h3>${race.name}</h3><p>${race.date}</p>`;
+        carouselSlides.appendChild(raceDiv);
+    });
 
-        let isOnline = onlinePeriods.some(period => {
-            const startTime = new Date(period.start);
-            const endTime = new Date(period.end);
-            return now >= startTime && now <= endTime;
-        });
-
-        if (!isOnline) {
-            document.getElementById('streamOfflineOverlay').style.display = 'flex';
+    // Carousel functionality
+    let index = 0;
+    document.querySelector('.prev').addEventListener('click', () => {
+        if (index > 0) {
+            index--;
+            updateCarousel();
         }
     });
-</script>
-<script>
-    window.onload = function() {
-        // Define your online periods
-        const onlinePeriods = [
-            //Austria
-            { start: '2024-06-28T14:00:00', end: '2024-06-28T16:00:00' }, //Practice 1
-            { start: '2024-06-28T18:00:00', end: '2024-06-28T19:45:00' }, //Sprint Quali
-            { start: '2024-06-29T13:30:00', end: '2024-06-29T15:30:00' }, //Sprint
-            { start: '2024-06-29T17:30:00', end: '2024-06-29T19:30:00' }, //Quali
-            { start: '2024-06-30T16:30:00', end: '2024-06-30T19:30:00' }, //Race
 
-        ];
-
-        // Function to find the nearest online period
-        function findNearestOnlinePeriod() {
-            const now = new Date();
-            return onlinePeriods.reduce((nearest, period) => {
-                const startTime = new Date(period.start);
-                const endTime = new Date(period.end);
-                if (startTime >= now && (!nearest || startTime < new Date(nearest.start))) {
-                    return period;
-                }
-                return nearest;
-            }, null);
+    document.querySelector('.next').addEventListener('click', () => {
+        if (index < races.length - 1) {
+            index++;
+            updateCarousel();
         }
+    });
 
-        // Function to update countdown
-        function updateCountdown() {
-            const nearestOnlinePeriod = findNearestOnlinePeriod();
-            if (!nearestOnlinePeriod) {
-                document.getElementById('streamOfflineOverlay').querySelector('.logo').innerText = 'Stream is Offline!';
-                return;
-            }
-            const now = new Date();
-            const startTime = new Date(nearestOnlinePeriod.start);
-            const diff = startTime - now;
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            document.getElementById('streamOfflineOverlay').innerHTML = `<div class="stream-info"><div class="logo-container">
-                    <img class="offlinelogo" src="https://jdn24.github.io/f1/F1.png" alt="F1 Logo">
-                    <p class="offlinetext">STREAM IS OFFLINE!</p>
-                </div><div id="countdownTimer" class="countdown">${days}D ${hours}H ${minutes}M ${seconds}S UNTIL THE NEXT STREAM</div></div>`;
-        }
-
-        // Show the loading overlay when the page loads
-        document.querySelector('.loading-overlay').style.display = 'flex';
-
-        // Hide the loading overlay after 3 seconds
-        setTimeout(function() {
-            document.querySelector('.loading-overlay').style.display = 'none';
-        }, 7000);
-
-        // Initially update countdown
-        updateCountdown();
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-    };
+    function updateCarousel() {
+        carouselSlides.style.transform = `translateX(-${index * 100}%)`;
+    }
+});
+    </script>
+<script>//code to redirect page to live tab
+window.location.href = 'https://jdn24.github.io/f1/live'; 
 </script>
+            
+
+            
+            
+    
     </body>
 </html>
