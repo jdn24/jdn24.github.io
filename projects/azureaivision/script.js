@@ -18,16 +18,16 @@ async function analyzeImage() {
     const reader = new FileReader();
     reader.onloadend = async () => {
         const arrayBuffer = reader.result;
-        const uint8Array = new Uint8Array(arrayBuffer);
+const uint8Array = new Uint8Array(arrayBuffer);
 
-        const fetchPromise = fetch('https://southeastasia.api.cognitive.microsoft.com/vision/v3.1/analyze?visualFeatures=Description,Tags', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/octet-stream',
-                'Ocp-Apim-Subscription-Key': '8cbc1f7142484fcc8219c91c4b8dc84a'
-            },
-            body: uint8Array
-        });
+const fetchPromise = fetch('https://azureaivisionapi.azurewebsites.net', { 
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/octet-stream',
+    },
+    body: uint8Array
+});
+
 
         const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('The AI took too long to generate a response. Please use a different image and try again!')), 10000));
 
