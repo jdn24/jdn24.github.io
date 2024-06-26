@@ -34,7 +34,7 @@ $( document ).ready(function() {
 
   });
 
-  $('.side-nav li, .outer-nav li').click(function(){
+  $('.side-nav li').click(function(){
 
     if (!($(this).hasClass('is-active'))) {
 
@@ -119,9 +119,9 @@ $( document ).ready(function() {
   // sync side and outer navigations
   function updateNavs(nextPos) {
 
-    $('.side-nav, .outer-nav').children().removeClass('is-active');
+    $('.side-nav').children().removeClass('is-active');
     $('.side-nav').children().eq(nextPos).addClass('is-active');
-    $('.outer-nav').children().eq(nextPos).addClass('is-active');
+    
 
   }
 

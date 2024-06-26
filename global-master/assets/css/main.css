@@ -245,6 +245,7 @@ body{
     color:#fff;
     -webkit-font-smoothing:antialiased;
     -webkit-text-size-adjust:100%
+    
 }
 
 .l-viewport{
@@ -291,7 +292,9 @@ body{
     opacity:.35;
     z-index:10
 }
-
+:root {
+    --header-height: 100px; /* Define the header height as a CSS variable for easy maintenance */
+}
 @media (max-width: 1180px){
     .l-side-nav{
         display:none
@@ -301,16 +304,18 @@ body{
 .l-main-content{
     position:relative;
     width:100%;
-    height:100%;
-    margin:0;
-    padding:0;
-    list-style:none
+    height: calc(100% - var(--header-height)); /* Adjust height to account for the header */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-top: var(--header-height); /* Adjust padding-top to push content below the header */
 }
 
 .l-section{
-    position:absolute;
-    width:100%;
-    height:100%
+    position: absolute;
+    top: var(--header-height); /* Start sections below the header */
+    width: 100%;
+    height: calc(100% - var(--header-height)); /* Adjust height to account for the header */
 }
 
 .device-notification{
@@ -371,6 +376,7 @@ body{
         display:-webkit-flex;
         display:-ms-flexbox;
         display:flex
+        
     }
 }
 
@@ -753,14 +759,15 @@ outline:none
     -ms-flex-pack:justify;
     justify-content:space-between;
     margin:0;
-    padding:0;
+    padding-bottom:20px;
     list-style:none
+    
 }
 
 .intro--options>a{
     max-width:250px;
     text-decoration:none;
-    color:#282828;
+    color:#818181;
     -webkit-transition:color .2s ease-in-out;
     transition:color .2s ease-in-out
 }
@@ -1841,5 +1848,29 @@ background-image:url("../img/about-history.jpg")
     #typing-effect {
         /* Smaller font size for smaller screens */
         width: 95%; /* Increase width to use more of the screen */
+    }
+}
+
+.introlink{
+    color:white;
+    text-decoration: none;
+}
+
+.introlink .recent-arrow, .introlink .cvarrow {
+    transition: transform 0.3s ease; /* Smooth transition for the transform property */
+}
+
+.introlink:hover .recent-arrow, .introlink:hover .cvarrow {
+    transform: translateX(6px); /* Move the arrow 10 pixels to the right on hover */
+}
+
+@media (max-width: 768px) {
+    .recentact {
+        display: none;
+    }
+    .intro--banner button {
+        position: fixed; /* Make the button's position fixed relative to the viewport */
+        margin-top:500px; /* Example: Adjust this value to position the button from the right */
+        z-index: 1000; /* Ensures the button is above other content */
     }
 }
