@@ -955,7 +955,8 @@ outline:none
 .work--lockup .slider1--item-description{
     display:none;
     max-width:250px;
-    margin:0 auto
+    margin:0 auto;
+    padding-bottom: 80px;
 }
 
 .work--lockup .slider1--item-image{
@@ -1482,7 +1483,8 @@ background-image:url("../img/responsivewebpreview.png")
 }
 
 .about--banner img{
-    width:315px
+    width:315px;
+    
 }
 }
 
@@ -1517,7 +1519,7 @@ background-image:url("../img/responsivewebpreview.png")
     }
     
     .about--banner img{
-        display:none
+      display:none;
     }
     
     .about--options{
