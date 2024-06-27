@@ -175,79 +175,157 @@ $( document ).ready(function() {
 
   }
 
-  function workSlider() {
+  function workslider1() {
 
-    $('.slider--prev, .slider--next').click(function() {
+    $('.slider1--prev, .slider1--next').click(function() {
 
       var $this = $(this),
-          curLeft = $('.slider').find('.slider--item-left'),
-          curLeftPos = $('.slider').children().index(curLeft),
-          curCenter = $('.slider').find('.slider--item-center'),
-          curCenterPos = $('.slider').children().index(curCenter),
-          curRight = $('.slider').find('.slider--item-right'),
-          curRightPos = $('.slider').children().index(curRight),
-          totalWorks = $('.slider').children().length,
-          $left = $('.slider--item-left'),
-          $center = $('.slider--item-center'),
-          $right = $('.slider--item-right'),
-          $item = $('.slider--item');
+          curLeft = $('.slider1').find('.slider1--item-left'),
+          curLeftPos = $('.slider1').children().index(curLeft),
+          curCenter = $('.slider1').find('.slider1--item-center'),
+          curCenterPos = $('.slider1').children().index(curCenter),
+          curRight = $('.slider1').find('.slider1--item-right'),
+          curRightPos = $('.slider1').children().index(curRight),
+          totalWorks = $('.slider1').children().length,
+          $left = $('.slider1--item-left'),
+          $center = $('.slider1--item-center'),
+          $right = $('.slider1--item-right'),
+          $item = $('.slider1--item');
 
-      $('.slider').animate({ opacity : 0 }, 400);
+      $('.slider1').animate({ opacity : 0 }, 400);
 
       setTimeout(function(){
 
-      if ($this.hasClass('slider--next')) {
+      if ($this.hasClass('slider1--next')) {
         if (curLeftPos < totalWorks - 1 && curCenterPos < totalWorks - 1 && curRightPos < totalWorks - 1) {
-          $left.removeClass('slider--item-left').next().addClass('slider--item-left');
-          $center.removeClass('slider--item-center').next().addClass('slider--item-center');
-          $right.removeClass('slider--item-right').next().addClass('slider--item-right');
+          $left.removeClass('slider1--item-left').next().addClass('slider1--item-left');
+          $center.removeClass('slider1--item-center').next().addClass('slider1--item-center');
+          $right.removeClass('slider1--item-right').next().addClass('slider1--item-right');
         }
         else {
           if (curLeftPos === totalWorks - 1) {
-            $item.removeClass('slider--item-left').first().addClass('slider--item-left');
-            $center.removeClass('slider--item-center').next().addClass('slider--item-center');
-            $right.removeClass('slider--item-right').next().addClass('slider--item-right');
+            $item.removeClass('slider1--item-left').first().addClass('slider1--item-left');
+            $center.removeClass('slider1--item-center').next().addClass('slider1--item-center');
+            $right.removeClass('slider1--item-right').next().addClass('slider1--item-right');
           }
           else if (curCenterPos === totalWorks - 1) {
-            $left.removeClass('slider--item-left').next().addClass('slider--item-left');
-            $item.removeClass('slider--item-center').first().addClass('slider--item-center');
-            $right.removeClass('slider--item-right').next().addClass('slider--item-right');
+            $left.removeClass('slider1--item-left').next().addClass('slider1--item-left');
+            $item.removeClass('slider1--item-center').first().addClass('slider1--item-center');
+            $right.removeClass('slider1--item-right').next().addClass('slider1--item-right');
           }
           else {
-            $left.removeClass('slider--item-left').next().addClass('slider--item-left');
-            $center.removeClass('slider--item-center').next().addClass('slider--item-center');
-            $item.removeClass('slider--item-right').first().addClass('slider--item-right');
+            $left.removeClass('slider1--item-left').next().addClass('slider1--item-left');
+            $center.removeClass('slider1--item-center').next().addClass('slider1--item-center');
+            $item.removeClass('slider1--item-right').first().addClass('slider1--item-right');
           }
         }
       }
       else {
         if (curLeftPos !== 0 && curCenterPos !== 0 && curRightPos !== 0) {
-          $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
-          $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
-          $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
+          $left.removeClass('slider1--item-left').prev().addClass('slider1--item-left');
+          $center.removeClass('slider1--item-center').prev().addClass('slider1--item-center');
+          $right.removeClass('slider1--item-right').prev().addClass('slider1--item-right');
         }
         else {
           if (curLeftPos === 0) {
-            $item.removeClass('slider--item-left').last().addClass('slider--item-left');
-            $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
-            $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
+            $item.removeClass('slider1--item-left').last().addClass('slider1--item-left');
+            $center.removeClass('slider1--item-center').prev().addClass('slider1--item-center');
+            $right.removeClass('slider1--item-right').prev().addClass('slider1--item-right');
           }
           else if (curCenterPos === 0) {
-            $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
-            $item.removeClass('slider--item-center').last().addClass('slider--item-center');
-            $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
+            $left.removeClass('slider1--item-left').prev().addClass('slider1--item-left');
+            $item.removeClass('slider1--item-center').last().addClass('slider1--item-center');
+            $right.removeClass('slider1--item-right').prev().addClass('slider1--item-right');
           }
           else {
-            $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
-            $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
-            $item.removeClass('slider--item-right').last().addClass('slider--item-right');
+            $left.removeClass('slider1--item-left').prev().addClass('slider1--item-left');
+            $center.removeClass('slider1--item-center').prev().addClass('slider1--item-center');
+            $item.removeClass('slider1--item-right').last().addClass('slider1--item-right');
           }
         }
       }
 
     }, 400);
 
-    $('.slider').animate({ opacity : 1 }, 400);
+    $('.slider1').animate({ opacity : 1 }, 400);
+
+    });
+
+  }
+
+  function workslider2() {
+
+    $('.slider2--prev, .slider2--next').click(function() {
+
+      var $this = $(this),
+          curLeft = $('.slider2').find('.slider2--item-left'),
+          curLeftPos = $('.slider2').children().index(curLeft),
+          curCenter = $('.slider2').find('.slider2--item-center'),
+          curCenterPos = $('.slider2').children().index(curCenter),
+          curRight = $('.slider2').find('.slider2--item-right'),
+          curRightPos = $('.slider2').children().index(curRight),
+          totalWorks = $('.slider2').children().length,
+          $left = $('.slider2--item-left'),
+          $center = $('.slider2--item-center'),
+          $right = $('.slider2--item-right'),
+          $item = $('.slider2--item');
+
+      $('.slider2').animate({ opacity : 0 }, 400);
+
+      setTimeout(function(){
+
+      if ($this.hasClass('slider2--next')) {
+        if (curLeftPos < totalWorks - 1 && curCenterPos < totalWorks - 1 && curRightPos < totalWorks - 1) {
+          $left.removeClass('slider2--item-left').next().addClass('slider2--item-left');
+          $center.removeClass('slider2--item-center').next().addClass('slider2--item-center');
+          $right.removeClass('slider2--item-right').next().addClass('slider2--item-right');
+        }
+        else {
+          if (curLeftPos === totalWorks - 1) {
+            $item.removeClass('slider2--item-left').first().addClass('slider2--item-left');
+            $center.removeClass('slider2--item-center').next().addClass('slider2--item-center');
+            $right.removeClass('slider2--item-right').next().addClass('slider2--item-right');
+          }
+          else if (curCenterPos === totalWorks - 1) {
+            $left.removeClass('slider2--item-left').next().addClass('slider2--item-left');
+            $item.removeClass('slider2--item-center').first().addClass('slider2--item-center');
+            $right.removeClass('slider2--item-right').next().addClass('slider2--item-right');
+          }
+          else {
+            $left.removeClass('slider2--item-left').next().addClass('slider2--item-left');
+            $center.removeClass('slider2--item-center').next().addClass('slider2--item-center');
+            $item.removeClass('slider2--item-right').first().addClass('slider2--item-right');
+          }
+        }
+      }
+      else {
+        if (curLeftPos !== 0 && curCenterPos !== 0 && curRightPos !== 0) {
+          $left.removeClass('slider2--item-left').prev().addClass('slider2--item-left');
+          $center.removeClass('slider2--item-center').prev().addClass('slider2--item-center');
+          $right.removeClass('slider2--item-right').prev().addClass('slider2--item-right');
+        }
+        else {
+          if (curLeftPos === 0) {
+            $item.removeClass('slider2--item-left').last().addClass('slider2--item-left');
+            $center.removeClass('slider2--item-center').prev().addClass('slider2--item-center');
+            $right.removeClass('slider2--item-right').prev().addClass('slider2--item-right');
+          }
+          else if (curCenterPos === 0) {
+            $left.removeClass('slider2--item-left').prev().addClass('slider2--item-left');
+            $item.removeClass('slider2--item-center').last().addClass('slider2--item-center');
+            $right.removeClass('slider2--item-right').prev().addClass('slider2--item-right');
+          }
+          else {
+            $left.removeClass('slider2--item-left').prev().addClass('slider2--item-left');
+            $center.removeClass('slider2--item-center').prev().addClass('slider2--item-center');
+            $item.removeClass('slider2--item-right').last().addClass('slider2--item-right');
+          }
+        }
+      }
+
+    }, 400);
+
+    $('.slider2').animate({ opacity : 1 }, 400);
 
     });
 
@@ -274,7 +352,8 @@ $( document ).ready(function() {
   }
 
   outerNav();
-  workSlider();
+  workslider1();
+  workslider2();
   transitionLabels();
 
 });
