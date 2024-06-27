@@ -1030,18 +1030,22 @@ outline:none
     -webkit-justify-content:center;
     -ms-flex-pack:center;
     justify-content:center;
-    background-color:#282828;
+    background-color:#0f33ff;
     border-radius:50%;
-    cursor:pointer
+    cursor:pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
-
+.work--lockup .slider1--next:hover, .work--lockup .slider1--prev:hover {
+    background-color: #0091FF; /* New background color on hover */
+}
 .work--lockup .slider1--next svg,.work--lockup .slider1--prev svg{
     width:20px;
     fill:#fff
 }
 
 .work--lockup .slider1--next{
-    right:0
+    right:0;
+
 }
 
 .work--lockup .slider1--prev{
