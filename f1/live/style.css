@@ -97,15 +97,15 @@
 
 /* Adjust iframe for 60% width */
 iframe.mobile-full-width {
-    width: 55%; /* 60% of the container's width */
+    width: 60%; /* 60% of the container's width */
     height: auto; /* Adjust height automatically */
     aspect-ratio: 16 / 9; /* Maintain aspect ratio, optional */
 }
 
 /* Adjust embed for 40% width */
 embed.mobile-hide {
-    width: 45%; /* 40% of the container's width */
-    height: auto; /* Adjust height automatically */
+    width: 40%; /* 40% of the container's width */
+    height: auto /* Adjust height automatically */
 }
 
 /* Ensure loading overlay covers the entire screen */
@@ -204,8 +204,8 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            background: #262626;
+            padding: 5px 20px;
+            background: #ff00005c;
             font-family: Formula1Bold, sans-serif;
             top: 0;
             width: 100%;
@@ -231,38 +231,48 @@ body {
         }
         nav a:hover {
             background-color: red;
+            color:white;
         }
         nav a.active {
             background-color: #ffffff; /* Change this color to fit your design */
             color: rgb(255, 0, 0);
             border-radius: 20px;
         }
+        @media (min-width: 1024px) and (max-width: 1440px) {
+            .logo-container {
+                left: -110px; /* Adjust this value as needed */
+                position:relative;
+            }
+            nav{
+                right: -100px;
+                position:relative
+            }
+        }
         section {
             padding: 20px;
             text-align: center;
         }
         footer {
-            padding: 20px;
-            background-color: #222;
+            
+            background-color: #ff00005c;
             color: #fff;
             text-align: center;
+            padding:17px;
         }
         
         .footer-content {
             display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: flex-start;
-            flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    position: fixed; /* Change to 'fixed' if you want it always visible at the bottom */
+    bottom: 0;
+    font-size:13px;
         }
         
-        .footer-section {
-            margin: 10px 0;
-        }
         
-        .footer-bottom {
-            margin-top: 20px;
-        }
         
         /* Responsive styles */
         @media (max-width: 768px) {
@@ -275,6 +285,10 @@ body {
             }
             nav {
                 display: none;
+            }
+            #bgVideo{
+                display: none;
+            
             }
         }
         main {
@@ -299,4 +313,44 @@ body {
         background-color:white;
         color: red;
     }
+    header, #streamOfflineOverlay {
+        width: 100%; /* Adjust this value as needed */
+        margin: 0 auto; /* Center the elements if they have a max-width */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+    
+    /* Ensure the header content is contained within the specified width */
+    header > .logo-container, header > nav {
+        max-width: 1200px; /* Adjust based on your design */
+        margin: 0 auto;
+        padding: 0 15px; /* Adjust padding as needed */
+        box-sizing: border-box;
+    }
+
+    #bgVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: 1920px;
+        height: 1080px;
+        z-index: -100; /* Ensure video stays in the background */
+        background-size: cover;
+    }
+
+    header, footer {
+        backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
+        -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+    }
+
+    .isactive{
+            color: red;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 20px; /* Consistent padding */
+            border-radius: 20px; /* Pre-apply rounded corners */
+            background-color: white;
+    }
+
     

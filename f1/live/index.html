@@ -9,6 +9,10 @@
         <link rel="icon" href="https://jdn24.github.io/f1/F1.svg" type="image/x-icon">
     </head>
     <body>
+        <video autoplay loop muted playsinline id="bgVideo">
+            <source src="assets/vid/topographicbackground.webm" type="video/webm">
+           
+        </video>
         <header>
             <div class="logo-container">
                 <img class="logo" src="https://jdn24.github.io/f1/F1.png" alt="F1 Logo" style="width: 100px;">
@@ -17,12 +21,13 @@
             </div>
             <nav>
                 <a href="./">HOME</a>
-                <a href="./live">LIVE</a>
+                <a class="isactive" href="./live">LIVE</a>
                 <a href="#contact">CONTACT</a>
             </nav>
         </header>
+
         <div class="media-container">
-            <iframe class="mobile-full-width" src="https://latifistreams.com/channel/raw2?url=aHR0cHM6Ly9ib25nc3BvcnRzLnN0cmVhbS9saXZlL2YxL2NodW5rcy5tM3U4" allow="autoplay; encrypted-media" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <iframe class="mobile-full-width" src="https://latifistreams.com/channel/raw2?url=aHR0cHM6Ly9ib25nc3BvcnRzLnN0cmVhbS9saXZlL2YxL2NodW5rcy5tM3U4" allow="autoplay; encrypted-media" frameborder="0" scrolling="no"  allowfullscreen></iframe>
     
         <!--<iframe class="mobile-full-width" src="https://latifistreams.com/channel/raw2?url=aHR0cHM6Ly9saXZlMi5ub3RlYnVsay54eXovdWtfc3NmMS9pbmRleC5tM3U4" allow="autoplay; encrypted-media" height="100%" width="57%" frameborder="0" scrolling="no" allowfullscreen></iframe>
     --> <embed class="mobile-hide" src="https://f1-dash.com/dashboard" >
@@ -39,7 +44,7 @@
 
             <div id="streamOfflineOverlay" class="loading-overlay" style="display: none;">
             
-            </div> 
+            </div>
 
             <script>
                 window.onload = function() {
@@ -146,10 +151,10 @@
         setInterval(updateCountdown, 1000);
     };
 </script>
-        <footer>
+        <footer class="footer-content">
             <p>Made with ♥ by JDN. <br>
                 
-                This project/website is unofficial and is not associated in any way with the Formula 1 companies. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of Formula One Licensing B.V</p>
+                This project/website is unofficial and is not associated in any way with the Formula 1 companies. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX <br>and related marks are trade marks of Formula One Licensing B.V</p>
         </footer>
 
 
