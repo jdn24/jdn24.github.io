@@ -1,15 +1,16 @@
 // Immediately-invoked function to check the script's execution context
+// Immediately-invoked function to check the script's execution context
+// Immediately-invoked function to check the script's execution context
 (function() {
     // Adjust the path to match the pathname part of the URL where your script is accessed
-    const expectedScriptPath = 'https://jdn24.github.io/projects/azureaivision/imageanalyzer/script.js';
+    const expectedScriptPath = '/projects/azureaivision/imageanalyzer/script.js';
 
     // Extract the pathname from the current location and normalize it
     const currentPathname = window.location.pathname;
 
-    // Check if the current pathname ends with the expected script path
-    if (currentPathname.match(expectedScriptPath)) {
-        document.body.innerHTML = '<p>This script cannot be accessed directly.</p>';
-        // Optionally, you could redirect the user to a different page or display a custom message
+    // Check if the current pathname matches the expected script path
+    if (currentPathname.endsWith(expectedScriptPath)) {
+        document.body.innerHTML = ''; // Clear the body to show a blank page
         return; // Stop further execution of the script
     }
 })();
