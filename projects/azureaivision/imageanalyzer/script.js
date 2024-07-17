@@ -20,10 +20,11 @@ async function analyzeImage() {
         const arrayBuffer = reader.result;
 const uint8Array = new Uint8Array(arrayBuffer);
 
-const fetchPromise = fetch('https://azureaivisionapi.azurewebsites.net/api/azureaivisiontrigger', { 
+const fetchPromise = fetch('/.netlify/functions/analyzeImage', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/octet-stream',
+        
     },
     body: uint8Array
 });
