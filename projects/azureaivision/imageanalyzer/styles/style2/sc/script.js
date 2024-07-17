@@ -1,19 +1,3 @@
-// Immediately-invoked function to check the script's execution context
-// Immediately-invoked function to check the script's execution context
-// Immediately-invoked function to check the script's execution context
-(function() {
-    // Adjust the path to match the pathname part of the URL where your script is accessed
-    const expectedScriptPath = '/projects/azureaivision/imageanalyzer/script.js';
-
-    // Extract the pathname from the current location and normalize it
-    const currentPathname = window.location.pathname;
-
-    // Check if the current pathname matches the expected script path
-    if (currentPathname.endsWith(expectedScriptPath)) {
-        document.body.innerHTML = ''; // Clear the body to show a blank page
-        return; // Stop further execution of the script
-    }
-})();
 
 async function analyzeImage() {
     const inputImage = document.getElementById('inputImage');
