@@ -18,17 +18,16 @@ async function analyzeImage() {
     const reader = new FileReader();
     reader.onloadend = async () => {
         const arrayBuffer = reader.result;
-const uint8Array = new Uint8Array(arrayBuffer);
+        const uint8Array = new Uint8Array(arrayBuffer);
 
-const fetchPromise = fetch('https://southeastasia.api.cognitive.microsoft.com/vision/v3.1/analyze?visualFeatures=Description,Tags', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/octet-stream',
-        'Ocp-Apim-Subscription-Key': 'c4b063820f104909b4698ddd6663297e'
-    },
-    body: uint8Array
-});
-
+        const fetchPromise = fetch('https://southeastasia.api.cognitive.microsoft.com/vision/v3.1/analyze?visualFeatures=Description,Tags', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/octet-stream',
+                'Ocp-Apim-Subscription-Key': 'c4b063820f104909b4698ddd6663297e'
+            },
+            body: uint8Array
+        });
 
         const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('The AI took too long to generate a response. Please use a different image and try again!')), 10000));
 
