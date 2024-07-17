@@ -20,11 +20,11 @@ async function analyzeImage() {
         const arrayBuffer = reader.result;
 const uint8Array = new Uint8Array(arrayBuffer);
 
-const fetchPromise = fetch('/.netlify/functions/analyzeImage', {
+const fetchPromise = fetch('https://southeastasia.api.cognitive.microsoft.com/vision/v3.1/analyze?visualFeatures=Description,Tags', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/octet-stream',
-        
+        'Ocp-Apim-Subscription-Key': 'c4b063820f104909b4698ddd6663297e'
     },
     body: uint8Array
 });
