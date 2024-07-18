@@ -1,0 +1,13 @@
+.typing-effect{
+    border-right: 2px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: monospace; /* Gives it a typewriter-like font, adjust as needed */
+    display: block;
+    margin-bottom: 4em; /* Adjust the space as needed */
+}
+/* Cursor blinker effect */
+@keyframes blinker {50% {border-color: transparent;}}
+.typing-effect 
+{animation: blinker 0.75s linear infinite;
+}
