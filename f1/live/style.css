@@ -21,7 +21,18 @@
                 }
             }
             
-
+            .minimized-embed {
+                display: none; /* Hide embed when minimized */
+            }
+            
+            .full-width-iframe {
+                width: 100% !important; /* Force iframe to full width */
+            }
+            
+            .default-width-iframe {
+                width: 57%; /* Default width to accommodate both iframe and embed */
+            }
+            
             .loading-overlay {
     position: absolute;
     top: 0;
