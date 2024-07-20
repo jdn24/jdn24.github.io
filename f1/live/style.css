@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Formula1Bold';
-    src: url('https://jdn24.github.io/f1/fonts/Formula1-Bold.ttf') format('truetype');
+    src: url('https://jdn24.com/f1/fonts/Formula1-Bold.ttf') format('truetype');
     
 }
 @font-face {
     font-family: 'Formula1Reg';
-    src: url('https://jdn24.github.io/f1/fonts/Formula1-Regular.ttf') format('truetype');
+    src: url('https://jdn24.com/f1/fonts/Formula1-Regular.ttf') format('truetype');
 }
             @media (max-width: 700px) {
                 .mobile-hide {
