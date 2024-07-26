@@ -53,6 +53,7 @@
                 display: block;
                 margin: 0 auto;
             }
+            
             .loading-overlay {
     position: absolute;
     top: 0;
@@ -151,24 +152,7 @@ div.loading-overlay {
     align-items: center;
     background: rgba(0, 0, 0, 0.81); /* Semi-transparent background */
 }
-.blinking-dot {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background-color: red;
-    border-radius: 100%;
-    margin-right: 10px;
-    animation: blink 1s infinite;
-}
 
-@keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-}
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .media-container {
@@ -279,14 +263,45 @@ body {
             border-radius: 20px; /* Pre-apply rounded corners */
             transition: background-color 0.3s, color 0.3s; /* Keep transitions for color and background */
         }
+        
         nav a:hover {
             background-color: red;
-            color:white;
+            color: white;
         }
+        
         nav a.active {
             background-color: #ffffff; /* Change this color to fit your design */
             color: rgb(255, 0, 0);
             border-radius: 20px;
+        }
+        
+        nav a:hover .blinking-dot {
+            background-color: white; /* Change the blinking dot color on hover */
+        }
+        
+        .blinking-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: red; /* Initial color of the blinking dot */
+            border-radius: 100%;
+            margin-right: 10px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        @media (min-width: 1024px) and (max-width: 1440px) {
+            .logo-container {
+                /* Your existing media query styles */
+            }
         }
         @media (min-width: 1024px) and (max-width: 1440px) {
             .logo-container {
