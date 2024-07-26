@@ -66,7 +66,7 @@ window.onload = function() {
                     <p class="offlinetext">STREAM IS OFFLINE!</p>
                 </div>
             
-                <div id="countdownTimer" class="countdown"><span style="font-size:30px;">${days}D ${hours}H ${minutes}M ${seconds}S</span> <br><br>UNTIL THE <span style="color:white;">${nearestOnlinePeriod.gpname.toUpperCase()} GP's </span> ${nearestOnlinePeriod.racename.toUpperCase()}</div>
+                <div id="countdownTimer" class="countdown"><span style="font-size:30px;"><span style="color:white;">${days}</span>D <span style="color:white;">${hours}</span>H <span style="color:white;">${minutes}</span>M <span style="color:white;">${seconds}</span>S</span> <br><br>UNTIL THE <span style="color:white;">${nearestOnlinePeriod.gpname.toUpperCase()} GP's </span> ${nearestOnlinePeriod.racename.toUpperCase()}</div>
                 <a href="https://jdn24.github.io/f1" class="home-button">Home</a>
             </div>`;
             // Check if the countdown has reached 0
