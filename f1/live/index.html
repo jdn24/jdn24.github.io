@@ -21,20 +21,19 @@
             </div>
             <nav>
                 <a href="">HOME</a>
-                <a class="isactive" href="./live">LIVE</a>
+                <a class="isactive" href="./live"><span class="blinking-dot"></span> LIVE</a>
                 <a href="">CONTACT</a>
             </nav>
         </header>
 
         <div class="media-container">
-            <!-- Add this button inside your .media-container div 
-<button onclick="toggleEmbed()">Toggle Embed</button>-->
-            <!--<iframe class="mobile-full-width" src="https://short.ink/OYrUWOXeQ?logo=https://jdn24.github.io/global-master/assets/img/logosmall.png" allow="autoplay; encrypted-media" frameborder="0" scrolling="no"  allowfullscreen></iframe>-->
-            <iframe class="mobile-full-width" src="https://mazespin.live/channel/raw2?url=aHR0cHM6Ly8yLWZzcy0xLnRoZW1lZGlhY2RuLmNvbS9sdl9icm9hZGNhc3R2aWV3ZXIyL2ZmMS8ubTN1OA==" allow="autoplay; encrypted-media" frameborder="0" scrolling="no"  allowfullscreen></iframe>
+            <!-- Add the toggle button -->
             
-        <!--<iframe class="mobile-full-width" src="https://latifistreams.com/channel/raw2?url=aHR0cHM6Ly9saXZlMi5ub3RlYnVsay54eXovdWtfc3NmMS9pbmRleC5tM3U4" allow="autoplay; encrypted-media" height="100%" width="57%" frameborder="0" scrolling="no" allowfullscreen></iframe>
-    --> <embed class="mobile-hide" src="https://f1-dash.com/dashboard" >
-        
+            
+            <iframe id="stream-iframe" class="mobile-full-width" src="https://mazespin.live/channel/raw2?url=aHR0cHM6Ly8yLWZzcy0xLnRoZW1lZGlhY2RuLmNvbS9sdl9icm9hZGNhc3R2aWV3ZXIyL2ZmMS8ubTN1OA==" allow="autoplay; encrypted-media" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            
+            <embed id="dashboard-embed" class="mobile-hide" src="https://f1-dash.com/dashboard">
+                <button id="toggle-button" onclick="toggleEmbed()">X</button>
         </div>
     
         
@@ -63,25 +62,23 @@
             
 
             
-            <script>
-                function toggleEmbed() {
-    const embed = document.querySelector('.media-container embed');
-    const iframe = document.querySelector('.media-container iframe');
-
-    // Check if the embed is currently minimized
-    if (embed.classList.contains('minimized-embed')) {
-        // Maximize the embed and adjust iframe width to default
-        embed.classList.remove('minimized-embed');
-        iframe.classList.remove('full-width-iframe');
-        iframe.classList.add('default-width-iframe');
-    } else {
-        // Minimize the embed and adjust iframe width to full
-        embed.classList.add('minimized-embed');
-        iframe.classList.remove('default-width-iframe');
-        iframe.classList.add('full-width-iframe');
-    }
-}
-            </script>
+        <script>
+            function toggleEmbed() {
+                const embed = document.getElementById('dashboard-embed');
+                const iframe = document.getElementById('stream-iframe');
+                const button = document.getElementById('toggle-button');
+        
+                if (embed.style.display === 'none') {
+                    embed.style.display = 'block';
+                    iframe.classList.remove('centered-iframe');
+                    button.textContent = 'X';
+                } else {
+                    embed.style.display = 'none';
+                    iframe.classList.add('centered-iframe');
+                    button.textContent = '+';
+                }
+            }
+        </script>
     
     </body>
 </html>
