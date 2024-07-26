@@ -153,6 +153,8 @@ div.loading-overlay {
     background: rgba(0, 0, 0, 0.81); /* Semi-transparent background */
 }
 
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .media-container {
@@ -298,14 +300,10 @@ body {
             }
         }
         
+        
         @media (min-width: 1024px) and (max-width: 1440px) {
             .logo-container {
-                /* Your existing media query styles */
-            }
-        }
-        @media (min-width: 1024px) and (max-width: 1440px) {
-            .logo-container {
-                left: -110px; /* Adjust this value as needed */
+                 /* Adjust this value as needed */
                 position:relative;
             }
             nav{

@@ -61,6 +61,7 @@ window.onload = function() {
         
         document.getElementById('streamOfflineOverlay').innerHTML = `<div class="stream-info">
                 <div class="logo-container">
+                
                     <img class="offlinelogo" src="https://jdn24.github.io/f1/F1.png" alt="F1 Logo">
                     <p class="offlinetext">STREAM IS OFFLINE!</p>
                 </div>
