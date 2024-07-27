@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>F1 Stream | JDN</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://jdn24.github.io/underconstruction/style.css">
         <link rel="icon" href="https://jdn24.github.io/f1/F1.svg" type="image/x-icon">
     </head>
     <body>
@@ -13,13 +14,34 @@
             <div class="logo-container">
                 <img class="logo" src="https://jdn24.github.io/f1/F1.png" alt="F1 Logo" style="width: 100px;">
                 <h1>F1 STREAM</h1> 
-                <p> | &nbsp; A Project by JDN</p>
+                <p style="display: none;"> | &nbsp; A Project by JDN</p>
             </div>
             <nav>
-                <a href="https://jdn24.github.io/f1">HOME</a>
-                <a href="https://jdn24.github.io/f1/live">LIVE</a>
-                <a href="#contact">CONTACT</a>
+                <ul>
+                    <li><a class="isactive" href="">HOME</a></li>
+                    <li class="dropdown">
+                        <a href="./live"><span class="blinking-dot"></span> LIVE</a>
+                        <!--<ul class="dropdown-content">
+                            <li><a href="./live1">Sky Sports</a></li>
+                            <li><a href="./live2">Live Stream 2</a></li>
+                            <li><a href="./live3">Live Stream 3</a></li>
+                        </ul>-->
+                    </li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
             </nav>
+            <ul class="mobile-nav">
+                <li><a class="isactive" href="">HOME</a></li>
+                <li class="dropdown">
+                    <a href="./live"><span class="blinking-dot"></span> LIVE</a>
+                    <!--<ul class="dropdown-content">
+                        <li><a href="./live1">Sky Sports</a></li>
+                        <li><a href="./live2">Live Stream 2</a></li>
+                        <li><a href="./live3">Live Stream 3</a></li>
+                    </ul>-->
+                </li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
         </header>
         
         
@@ -79,7 +101,7 @@
 <script>//code to redirect page to live tab
 window.location.href = 'https://jdn24.github.io/f1/live'; 
 </script>
-            
+<script src="https://jdn24.github.io/underconstruction/script.js"></script>            
 
             
             
