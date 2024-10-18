@@ -1,20 +1,27 @@
 window.onload = function() {
     // Define your online periods
     const onlinePeriods = [
+        {start: '2024-10-18T12:00:00+04:00', end:'2024-10-18T14:00:00+04:00'},
+        //US GP
+        { gpname: 'United States', racename:'Practice 1 Session',start: '2024-10-18T21:00:00+04:00', end: '2024-10-18T23:00:00+04:00' }, //Practice 1
+        { gpname: 'United States', racename:'Sprint Qualifying',start: '2024-10-19T01:00:00+04:00', end: '2024-10-19T02:30:00+04:00' }, //SQ
+        { gpname: 'United States', racename:'Sprint Race',start: '2024-10-19T21:30:00+04:00', end: '2024-10-19T23:30:00+04:00' }, //Sprint
+        { gpname: 'United States', racename:'Qualifying Session',start: '2024-10-20T01:30:00+04:00', end: '2024-10-20T03:30:00+04:00' }, //Quali
+        { gpname: 'United States', racename:'Race',start: '2024-10-20T22:30:00+04:00', end: '2024-10-21T01:30:00+04:00' }, //Race
         
-        //Belgium GP
-        { gpname: 'Belgian', racename:'Practice 1 Session',start: '2024-07-26T15:00:00+04:00', end: '2024-07-26T17:00:00+04:00' }, //Practice 1
-        { gpname: 'Belgian', racename:'Practice 2 Session',start: '2024-07-26T18:30:00+04:00', end: '2024-07-26T21:30:00+04:00' }, //Practice 2
-        { gpname: 'Belgian', racename:'Practice 3 Session',start: '2024-07-27T14:00:00+04:00', end: '2024-07-27T16:00:00+04:00' }, //Practice 3
-        { gpname: 'Belgian', racename:'Qualifying Session',start: '2024-07-27T17:30:00+04:00', end: '2024-07-27T19:30:00+04:00' }, //Quali
-        { gpname: 'Belgian', racename:'Race',start: '2024-07-28T16:30:00+04:00', end: '2024-07-28T19:30:00+04:00' }, //Race
+        //México GP
+        { gpname: 'México', racename:'Practice 1 Session',start: '2024-10-25T22:00:00+04:00', end: '2024-10-26T00:00:00+04:00' }, //Practice 1
+        { gpname: 'México', racename:'Practice 2 Session',start: '2024-10-26T01:30:00+04:00', end: '2024-10-26T04:00:00+04:00' }, //Practice 2
+        { gpname: 'México', racename:'Practice 3 Session',start: '2024-10-26T21:00:00+04:00', end: '2024-10-26T23:00:00+04:00' }, //Practice 3
+        { gpname: 'México', racename:'Qualifying Session',start: '2024-10-27T00:30:00+04:00', end: '2024-10-27T02:30:00+04:00' }, //Quali
+        { gpname: 'México', racename:'Race',start: '2024-10-27T23:30:00+04:00', end: '2024-10-28T02:30:00+04:00' }, //Race
 
-        //Dutch GP
-        { gpname: 'Dutch', racename:'Practice 1 Session',start: '2024-08-23T14:00:00+04:00', end: '2024-08-23T16:00:00+04:00' }, //Practice 1
-        { gpname: 'Dutch', racename:'Practice 2 Session',start: '2024-08-23T17:30:00+04:00', end: '2024-08-23T19:30:00+04:00' }, //Practice 2
-        { gpname: 'Dutch', racename:'Practice 3 Session',start: '2024-08-24T13:00:00+04:00', end: '2024-08-24T15:00:00+04:00' }, //Practice 3
-        { gpname: 'Dutch', racename:'Qualifying Session',start: '2024-08-24T16:30:00+04:00', end: '2024-08-24T18:30:00+04:00' }, //Quali
-        { gpname: 'Dutch', racename:'Race',start: '2024-08-25T16:30:00+04:00', end: '2024-08-25T19:30:00+04:00' }, //Race
+        //Sao Paulo GP
+        { gpname: 'São Paulo', racename:'Practice 1 Session',start: '2024-11-01T18:00:00+04:00', end: '2024-11-01T20:00:00+04:00' }, //Practice 1
+        { gpname: 'São Paulo', racename:'Sprint Qualifying',start: '2024-11-01T22:00:00+04:00', end: '2024-11-01T23:30:00+04:00' }, //SQ
+        { gpname: 'São Paulo', racename:'Sprint Race',start: '2024-11-02T17:30:00+04:00', end: '2024-11-02T19:30:00+04:00' }, //Sprint
+        { gpname: 'São Paulo', racename:'Qualifying Session',start: '2024-11-02T21:30:00+04:00', end: '2024-11-02T23:30:00+04:00' }, //Quali
+        { gpname: 'São Paulo', racename:'Race',start: '2024-11-03T20:30:00+04:00', end: '2024-11-03T23:30:00+04:00' }, //Race
     ];
     showoverlay();
     function showoverlay(){
@@ -84,7 +91,7 @@ window.onload = function() {
     // Hide the loading overlay after 3 seconds
     setTimeout(function() {
         document.querySelector('.loading-overlay').style.display = 'none';
-    }, 7000);
+    }, 3000);
     
     
     // Initially update countdown
