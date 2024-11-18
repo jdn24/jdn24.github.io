@@ -1,28 +1,14 @@
 window.onload = function() {
     // Define your online periods
     const onlinePeriods = [
-        {start: '2024-10-18T12:00:00+04:00', end:'2024-10-18T14:00:00+04:00'},
+        
         //Las Vegas GP
         { gpname: 'Las Vegas', racename:'Practice 1 Session',start: '2024-11-22T06:00:00+04:00', end: '2024-11-22T08:00:00+04:00' }, //Practice 1
         { gpname: 'Las Vegas', racename:'Practice 2 Session',start: '2024-11-22T09:30:00+04:00', end: '2024-11-22T11:30:00+04:00' }, //SQ
         { gpname: 'Las Vegas', racename:'Practice 3 Session',start: '2024-11-23T06:00:00+04:00', end: '2024-11-23T08:00:00+04:00' }, //Sprint
         { gpname: 'Las Vegas', racename:'Qualifying Session',start: '2024-11-23T09:30:00+04:00', end: '2024-11-23T11:30:00+04:00' }, //Quali
         { gpname: 'Las Vegas', racename:'Race',start: '2024-11-24T09:30:00+04:00', end: '2024-11-24T12:30:00+04:00' }, //Race
-        
-        //México GP
-        { gpname: 'México', racename:'Practice 1 Session',start: '2024-10-25T22:00:00+04:00', end: '2024-10-26T00:00:00+04:00' }, //Practice 1
-        { gpname: 'México', racename:'Practice 2 Session',start: '2024-10-26T01:30:00+04:00', end: '2024-10-26T04:00:00+04:00' }, //Practice 2
-        { gpname: 'México', racename:'Practice 3 Session',start: '2024-10-26T21:00:00+04:00', end: '2024-10-26T23:00:00+04:00' }, //Practice 3
-        { gpname: 'México', racename:'Qualifying Session',start: '2024-10-27T00:30:00+04:00', end: '2024-10-27T02:30:00+04:00' }, //Quali
-        { gpname: 'México', racename:'Race',start: '2024-10-27T23:30:00+04:00', end: '2024-10-28T02:30:00+04:00' }, //Race
-
-        //Sao Paulo GP
-        { gpname: 'São Paulo', racename:'Practice 1 Session',start: '2024-11-01T18:00:00+04:00', end: '2024-11-01T20:00:00+04:00' }, //Practice 1
-        { gpname: 'São Paulo', racename:'Sprint Qualifying',start: '2024-11-01T22:00:00+04:00', end: '2024-11-01T23:30:00+04:00' }, //SQ
-        { gpname: 'São Paulo', racename:'Sprint Race',start: '2024-11-02T17:30:00+04:00', end: '2024-11-02T19:30:00+04:00' }, //Sprint
-        { gpname: 'São Paulo', racename:'Qualifying Session',start: '2024-11-02T21:30:00+04:00', end: '2024-11-02T23:30:00+04:00' }, //Quali
-        { gpname: 'São Paulo', racename:'Race',start: '2024-11-03T20:30:00+04:00', end: '2024-11-03T23:30:00+04:00' }, //Race
-    ];
+        ];
     showoverlay();
     function showoverlay(){
         const now = new Date();
