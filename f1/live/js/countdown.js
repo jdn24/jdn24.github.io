@@ -2,12 +2,12 @@ window.onload = function() {
     // Define your online periods
     const onlinePeriods = [
         {start: '2024-10-18T12:00:00+04:00', end:'2024-10-18T14:00:00+04:00'},
-        //US GP
-        { gpname: 'United States', racename:'Practice 1 Session',start: '2024-10-18T21:00:00+04:00', end: '2024-10-18T23:00:00+04:00' }, //Practice 1
-        { gpname: 'United States', racename:'Sprint Qualifying',start: '2024-10-19T01:00:00+04:00', end: '2024-10-19T02:30:00+04:00' }, //SQ
-        { gpname: 'United States', racename:'Sprint Race',start: '2024-10-19T21:30:00+04:00', end: '2024-10-19T23:30:00+04:00' }, //Sprint
-        { gpname: 'United States', racename:'Qualifying Session',start: '2024-10-20T01:30:00+04:00', end: '2024-10-20T03:30:00+04:00' }, //Quali
-        { gpname: 'United States', racename:'Race',start: '2024-10-20T22:30:00+04:00', end: '2024-10-21T01:30:00+04:00' }, //Race
+        //Las Vegas GP
+        { gpname: 'Las Vegas', racename:'Practice 1 Session',start: '2024-11-22T06:00:00+04:00', end: '2024-11-22T08:00:00+04:00' }, //Practice 1
+        { gpname: 'Las Vegas', racename:'Practice 2 Session',start: '2024-11-22T09:30:00+04:00', end: '2024-11-22T11:30:00+04:00' }, //SQ
+        { gpname: 'Las Vegas', racename:'Practice 3 Session',start: '2024-11-23T06:00:00+04:00', end: '2024-11-23T08:00:00+04:00' }, //Sprint
+        { gpname: 'Las Vegas', racename:'Qualifying Session',start: '2024-11-23T09:30:00+04:00', end: '2024-11-23T11:30:00+04:00' }, //Quali
+        { gpname: 'Las Vegas', racename:'Race',start: '2024-11-24T09:30:00+04:00', end: '2024-11-24T12:30:00+04:00' }, //Race
         
         //México GP
         { gpname: 'México', racename:'Practice 1 Session',start: '2024-10-25T22:00:00+04:00', end: '2024-10-26T00:00:00+04:00' }, //Practice 1
